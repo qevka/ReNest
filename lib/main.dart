@@ -9,6 +9,8 @@ void main() {
       title: "Application",
       initialRoute: AppPages.initial,
       getPages: AppPages.routes,
+      darkTheme: ,
+      theme: ,
     ),
   );
 }

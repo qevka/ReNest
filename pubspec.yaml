@@ -1,7 +1,7 @@
-name: re_nest
+name: ReNest
 version: 1.0.0+1
 publish_to: none
-description: A new Flutter project.
+description: A system for helping people move to unfamiliar places.
 environment: 
   sdk: '>=2.12.0 <3.0.0'
 
@@ -19,4 +19,70 @@ dev_dependencies:
 
 flutter: 
   uses-material-design: true
+  fonts:
+    - family: ZillaSlab
+      fonts:
+        - asset: fonts/ZillaSlab-Regular.ttf
+          style: normal
+        - asset: fonts/ZillaSlab-SemiBoldItalic.ttf
+          style: italic
+    - family: VTCMartin
+      fonts:
+        - asset: fonts/VTC-Martin-Regular.ttf
+          style: normal
+    - family: VangaurdCF
+      fonts:
+        - asset: fonts/VanguardCF-Bold.ttf
+    - family: TTInterfaces
+      fonts:
+        - asset: fonts/TTInterfaces-Regular.ttf
+          style: normal
+    - family: SpaceMono
+      fonts:
+        - asset: fonts/SpaceMono-Regular.ttf
+          style: normal
+    - family: OptimalNovaLT
+      fonts:
+        - asset: fonts/OptimalNovaLT-Regular.otf
+    - family: NotoSans
+      fonts:
+        - asset: fonts/NotoSans-Regular.ttf
+          style: normal
+    - family: LibreBaskerville
+      fonts:
+        - asset: fonts/LibreBaskerville-Italic.ttf
+          style: italic
+        - asset: fonts/LibreBaskerville-Regular.ttf
+          style: normal
+    - family: JetBrainsMono
+      fonts:
+        - asset: fonts/JetBrainsMono-VariableFont_wght.ttf
+    - family: Copperplate
+      fonts:
+        - asset: fonts/copperplate/Copperplate.ttf
+        - asset: fonts/copperplate/Copperplate-Bold.ttf
+        - asset: fonts/copperplate/Copperplate-Light.ttf
+    - family: Avenir
+      fonts:
+        - asset: fonts/avenir/Avenir-Black.ttf
+        - asset: fonts/avenir/Avenir-BlackOblique.ttf
+        - asset: fonts/avenir/Avenir-Book.ttf
+        - asset: fonts/avenir/Avenir-BookOblique.ttf
+        - asset: fonts/avenir/Avenir-Heavy.ttf
+        - asset: fonts/avenir/Avenir-HeavyOblique.ttf
+        - asset: fonts/avenir/Avenir-Light.ttf
+        - asset: fonts/avenir/Avenir-LightOblique.ttf
+        - asset: fonts/avenir/Avenir-Medium.ttf
+        - asset: fonts/avenir/Avenir-MediumOblique.ttf
+        - asset: fonts/avenir/Avenir-Oblique.ttf
+        - asset: fonts/avenir/Avenir-Roman.ttf
+    - family: AT-Apoc-Dark
+      fonts:
+        - asset: fonts/AT-Apoc-Dark.otf
+          style: normal
+        - asset: fonts/AT-Apoc-Dark-Italic.otf
+          style: italic
+
+
+
 
