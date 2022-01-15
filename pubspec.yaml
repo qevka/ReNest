@@ -22,65 +22,65 @@ flutter:
   fonts:
     - family: ZillaSlab
       fonts:
-        - asset: fonts/ZillaSlab-Regular.ttf
+        - asset: assets/fonts/ZillaSlab-Regular.ttf
           style: normal
-        - asset: fonts/ZillaSlab-SemiBoldItalic.ttf
+        - asset: assets/fonts/ZillaSlab-SemiBoldItalic.ttf
           style: italic
     - family: VTCMartin
       fonts:
-        - asset: fonts/VTC-Martin-Regular.ttf
+        - asset: assets/fonts/VTC-Martin-Regular.ttf
           style: normal
     - family: VangaurdCF
       fonts:
-        - asset: fonts/VanguardCF-Bold.ttf
+        - asset: assets/fonts/VanguardCF-Bold.otf
     - family: TTInterfaces
       fonts:
-        - asset: fonts/TTInterfaces-Regular.ttf
+        - asset: assets/fonts/TTInterfaces-Regular.ttf
           style: normal
     - family: SpaceMono
       fonts:
-        - asset: fonts/SpaceMono-Regular.ttf
+        - asset: assets/fonts/SpaceMono-Regular.ttf
           style: normal
-    - family: OptimalNovaLT
+    - family: OptimaNovaLT
       fonts:
-        - asset: fonts/OptimalNovaLT-Regular.otf
+        - asset: assets/fonts/OptimaNovaLT-Regular.otf
     - family: NotoSans
       fonts:
-        - asset: fonts/NotoSans-Regular.ttf
+        - asset: assets/fonts/NotoSans-Regular.ttf
           style: normal
     - family: LibreBaskerville
       fonts:
-        - asset: fonts/LibreBaskerville-Italic.ttf
+        - asset: assets/fonts/LibreBaskerville-Italic.ttf
           style: italic
-        - asset: fonts/LibreBaskerville-Regular.ttf
+        - asset: assets/fonts/LibreBaskerville-Regular.ttf
           style: normal
     - family: JetBrainsMono
       fonts:
-        - asset: fonts/JetBrainsMono-VariableFont_wght.ttf
+        - asset: assets/fonts/JetBrainsMono-VariableFont_wght.ttf
     - family: Copperplate
       fonts:
-        - asset: fonts/copperplate/Copperplate.ttf
-        - asset: fonts/copperplate/Copperplate-Bold.ttf
-        - asset: fonts/copperplate/Copperplate-Light.ttf
+        - asset: assets/fonts/copperplate/Copperplate.ttf
+        - asset: assets/fonts/copperplate/Copperplate-Bold.ttf
+        - asset: assets/fonts/copperplate/Copperplate-Light.ttf
     - family: Avenir
       fonts:
-        - asset: fonts/avenir/Avenir-Black.ttf
-        - asset: fonts/avenir/Avenir-BlackOblique.ttf
-        - asset: fonts/avenir/Avenir-Book.ttf
-        - asset: fonts/avenir/Avenir-BookOblique.ttf
-        - asset: fonts/avenir/Avenir-Heavy.ttf
-        - asset: fonts/avenir/Avenir-HeavyOblique.ttf
-        - asset: fonts/avenir/Avenir-Light.ttf
-        - asset: fonts/avenir/Avenir-LightOblique.ttf
-        - asset: fonts/avenir/Avenir-Medium.ttf
-        - asset: fonts/avenir/Avenir-MediumOblique.ttf
-        - asset: fonts/avenir/Avenir-Oblique.ttf
-        - asset: fonts/avenir/Avenir-Roman.ttf
+        - asset: assets/fonts/avenir/Avenir-Black.ttf
+        - asset: assets/fonts/avenir/Avenir-BlackOblique.ttf
+        - asset: assets/fonts/avenir/Avenir-Book.ttf
+        - asset: assets/fonts/avenir/Avenir-BookOblique.ttf
+        - asset: assets/fonts/avenir/Avenir-Heavy.ttf
+        - asset: assets/fonts/avenir/Avenir-HeavyOblique.ttf
+        - asset: assets/fonts/avenir/Avenir-Light.ttf
+        - asset: assets/fonts/avenir/Avenir-LightOblique.ttf
+        - asset: assets/fonts/avenir/Avenir-Medium.ttf
+        - asset: assets/fonts/avenir/Avenir-MediumOblique.ttf
+        - asset: assets/fonts/avenir/Avenir-Oblique.ttf
+        - asset: assets/fonts/avenir/Avenir-Roman.ttf
     - family: AT-Apoc-Dark
       fonts:
-        - asset: fonts/AT-Apoc-Dark.otf
+        - asset: assets/fonts/AT-Apoc-Dark.otf
           style: normal
-        - asset: fonts/AT-Apoc-Dark-Italic.otf
+        - asset: assets/fonts/AT-Apoc-Dark-Italic.otf
           style: italic
 
 

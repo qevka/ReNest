@@ -1,3 +1,4 @@
+import 'package:ReNest/styles/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,8 +10,7 @@ void main() {
       title: "Application",
       initialRoute: AppPages.initial,
       getPages: AppPages.routes,
-      darkTheme: ,
-      theme: ,
+      theme: RestTheme.lightTheme,
     ),
   );
 }
