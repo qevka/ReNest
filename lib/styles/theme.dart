@@ -15,11 +15,11 @@ class RestTheme {
             iconTheme: IconThemeData(color: Colors.grey),
             color: Colors.white,
             toolbarTextStyle: TextStyle(color: Colors.black),
-            titleTextStyle:
-                TextStyle(color: Colors.black, fontFamily: ReNestFont.avenir, fontSize: 34, fontWeight: FontWeight.bold)),
-        scaffoldBackgroundColor: ReNestColor.background,
-        backgroundColor: ReNestColor.scaffoldLight,
-        fontFamily: ReNestFont.avenir, //3
+            titleTextStyle: TextStyle(
+                color: Colors.black, fontFamily: ReNestFont.avenirBlack, fontSize: 34, fontWeight: FontWeight.bold)),
+        scaffoldBackgroundColor: RenestColor.background,
+        backgroundColor: RenestColor.scaffoldLight,
+        fontFamily: ReNestFont.avenirBlack, //3
         buttonTheme: ButtonThemeData(
           // 4
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18.0)),

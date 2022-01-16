@@ -10,7 +10,7 @@ class SearchBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 50,
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(100), color: ReNestColor.background),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(100), color: RenestColor.background),
       child: Padding(
         padding: const EdgeInsets.fromLTRB(15.0, 0, 0, 0),
         child: Row(
@@ -31,7 +31,7 @@ class SearchBar extends StatelessWidget {
                   decoration: InputDecoration(
                     border: InputBorder.none,
                     hintText: "Search",
-                    hintStyle: TextStyle(color: ReNestColor.textFieldHintText, fontWeight: FontWeight.w200),
+                    hintStyle: TextStyle(color: RenestColor.textFieldHintText, fontWeight: FontWeight.w200),
                   ),
                 ),
               ),

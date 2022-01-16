@@ -9,6 +9,12 @@ class ReNestFont {
   static String libreBaskerville = "LibreBaskerville";
   static String jetBrainsMono = "JetBrainsMono";
   static String copperplate = "Coperplate";
-  static String avenir = "Avenir";
+  static String avenirBlack = "Avenir-Black";
+  static String avenirBook = "Avenir-Book";
+  static String avenirHeavy = "Avenir-Heavy";
+  static String avenirLight = "Avenir-Light";
+  static String avenirMedium = "Avenir-Medium";
+  static String avenirOblique = "Avenir-Oblique";
+  static String avenirRoman = "Avenir-Roman";
   static String aTApocDark = "AT-Apoc-Dark";
 }
