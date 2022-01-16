@@ -1,5 +1,5 @@
-import 'package:ReNest/app/models/task_model.dart';
 import 'package:get/get.dart';
+import 'package:renest/app/models/task_model.dart';
 
 class HomeController extends GetxController {
   List<Task> tasks = RxList.empty();

@@ -1,6 +1,7 @@
-import 'package:ReNest/styles/colors.dart';
-import 'package:ReNest/styles/fonts.dart';
 import 'package:flutter/material.dart';
+
+import 'colors.dart';
+import 'fonts.dart';
 
 class RestTheme {
   static ThemeData get lightTheme {

@@ -1,11 +1,10 @@
-import 'package:ReNest/styles/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:renest/styles/colors.dart';
 
 class SearchBar extends StatelessWidget {
   SearchBar({required this.onChanged});
 
-  Function(String) onChanged;
-  TextEditingController _controller = TextEditingController();
+  final Function(String) onChanged;
 
   @override
   Widget build(BuildContext context) {

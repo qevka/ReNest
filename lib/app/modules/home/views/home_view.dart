@@ -1,8 +1,8 @@
-import 'package:ReNest/app/modules/home/widgets/search_bar.dart';
-import 'package:ReNest/styles/colors.dart';
-import 'package:ReNest/styles/fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:renest/app/modules/home/widgets/search_bar.dart';
+import 'package:renest/styles/colors.dart';
+import 'package:renest/styles/fonts.dart';
 
 import '../controllers/home_controller.dart';
 

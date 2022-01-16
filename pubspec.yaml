@@ -1,4 +1,4 @@
-name: ReNest
+name: renest
 version: 1.0.0+1
 publish_to: none
 description: A system for helping people move to unfamiliar places.
@@ -7,7 +7,6 @@ environment:
 
 dependencies:
   built_value: ^8.1.3
-  json_serializable: ^6.1.3
   cupertino_icons: ^1.0.2
   get: 4.6.1
   flutter: 

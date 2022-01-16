@@ -19,7 +19,7 @@ class AppPages {
       binding: HomeBinding(),
     ),
     GetPage(
-      name: _Paths.ADD_TASK,
+      name: _Paths.addTask,
       page: () => AddTaskView(),
       binding: AddTaskBinding(),
     ),
