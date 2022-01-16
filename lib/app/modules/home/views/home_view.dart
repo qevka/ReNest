@@ -1,3 +1,6 @@
+import 'package:ReNest/app/modules/home/widgets/search_bar.dart';
+import 'package:ReNest/styles/colors.dart';
+import 'package:ReNest/styles/fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,21 +19,34 @@ class HomeView extends GetView<HomeController> {
       body: Column(children: [
         Container(
           width: Get.width,
-          height: 60,
+          height: 120,
           color: Colors.white,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              decoration: InputDecoration(
-                  fillColor: Colors.white,
-                  border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
-                  hintText: "Search",
-                  hintStyle: TextStyle(color: Colors.grey, fontWeight: FontWeight.w200),
-                  icon: Icon(
-                    Icons.search,
-                    color: Colors.grey,
-                  )),
-            ),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: SearchBar(
+                  onChanged: print,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(40, 10, 40, 10),
+                child: DefaultTabController(
+                  initialIndex: 1,
+                  length: 2,
+                  child: TabBar(
+                    indicatorSize: TabBarIndicatorSize.label,
+                    indicatorPadding: EdgeInsets.all(-16),
+                    indicatorColor: Colors.black,
+                    tabs: [Text("Tasks"), Text("Completed")],
+                    unselectedLabelColor: ReNestColor.textFieldHintText,
+                    unselectedLabelStyle:
+                        TextStyle(fontFamily: ReNestFont.avenir, fontWeight: FontWeight.bold, fontSize: 19),
+                    labelStyle: TextStyle(fontFamily: ReNestFont.avenir, fontWeight: FontWeight.bold, fontSize: 19),
+                  ),
+                ),
+              )
+            ],
           ),
         )
       ]),

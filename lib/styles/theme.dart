@@ -16,7 +16,7 @@ class RestTheme {
             toolbarTextStyle: TextStyle(color: Colors.black),
             titleTextStyle:
                 TextStyle(color: Colors.black, fontFamily: ReNestFont.avenir, fontSize: 34, fontWeight: FontWeight.bold)),
-        scaffoldBackgroundColor: Colors.grey,
+        scaffoldBackgroundColor: ReNestColor.background,
         backgroundColor: ReNestColor.scaffoldLight,
         fontFamily: ReNestFont.avenir, //3
         buttonTheme: ButtonThemeData(

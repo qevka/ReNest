@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Register to vote",
+    "done": false,
+    "priority": "high"
+  },
+  {
+    "name": "Buy boxes",
+    "done": false,
+    "priority": "low"
+  },
+  {
+    "name": "Get drivers license",
+    "done": false,
+    "priority": "high"
+  },
+  {
+    "name": "Setup Utilities",
+    "done": false,
+    "priority": "high"
+  },
+  {
+    "name": "Setup Internet",
+    "done": false,
+    "priority": "normal"
+  },
+  {
+    "name": "Setup Waste Management",
+    "done": false,
+    "priority": "normal"
+  },
+  {
+    "name": "Find a contractor",
+    "done": true,
+    "priority": "low"
+  },
+  {
+    "name": "Find a landscaper",
+    "done": false,
+    "priority": "low"
+  },
+  {
+    "name": "Find a building inspector",
+    "done": false,
+    "priority": "low"
+  },
+  {
+    "name": "Call real estate Agent",
+    "done": true,
+    "priority": "normal"
+  }
+]
