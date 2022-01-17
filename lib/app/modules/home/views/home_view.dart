@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:renest/app/modules/home/widgets/completed_task.dart';
+import 'package:get/get_navigation/get_navigation.dart';
+import 'package:renest/app/modules/home/views/completed.dart';
+import 'package:renest/app/modules/home/views/search_view.dart';
+import 'package:renest/app/modules/home/views/tasks.dart';
 import 'package:renest/app/modules/home/widgets/search_bar.dart';
-import 'package:renest/app/modules/home/widgets/tasks.dart';
 import 'package:renest/styles/colors.dart';
 import 'package:renest/styles/fonts.dart';
 
@@ -30,8 +32,14 @@ class HomeView extends GetView<HomeController> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: SearchBar(
-                      onChanged: print,
+                    child: Hero(
+                      tag: "Search",
+                      child: SearchBar(
+                        onTap: () {
+                          Get.to(() => SearchView(), transition: Transition.topLevel);
+                        },
+                        onChanged: (val) {},
+                      ),
                     ),
                   ),
                   TabBar(
@@ -51,7 +59,10 @@ class HomeView extends GetView<HomeController> {
         ),
         body: TabBarView(
           children: [
-            TaskList(),
+            Hero(
+              child: TaskList(),
+              tag: "Tasks",
+            ),
             CompletedTaskList(),
           ],
         ),

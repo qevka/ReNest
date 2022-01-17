@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:renest/app/modules/home/views/search_view.dart';
 
 import '../modules/addTask/bindings/add_task_binding.dart';
 import '../modules/addTask/views/add_task_view.dart';
@@ -13,6 +14,7 @@ class AppPages {
   static const initial = Routes.home;
 
   static final routes = [
+    GetPage(name: _Paths.search, page: () => SearchView()),
     GetPage(
       name: _Paths.home,
       page: () => HomeView(),
