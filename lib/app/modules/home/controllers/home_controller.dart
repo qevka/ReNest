@@ -10,6 +10,8 @@ class HomeController extends GetxController {
     return tasks.where((task) => task.done == true).toList().obs;
   }
 
+  RxList<Task> tasksHolder = RxList.empty();
+
   //TODO: Implement HomeController
 
   final count = 0.obs;
@@ -20,8 +22,16 @@ class HomeController extends GetxController {
     complete.refresh();
   }
 
-  List<Task> search(String query) {
-    return tasks.where((element) => element.name.toLowerCase().contains(query.toLowerCase())).toList();
+  endSearch() {
+    tasks.value = tasksHolder.value;
+  }
+
+  startSearch() {
+    tasksHolder.value = tasks.value;
+  }
+
+  search(String query) {
+    tasks.value = tasksHolder.where((element) => element.name.toLowerCase().contains(query.toLowerCase())).toList();
   }
 
   @override

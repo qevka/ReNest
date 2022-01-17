@@ -2,8 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:renest/app/modules/home/controllers/home_controller.dart';
-import 'package:renest/app/modules/home/widgets/clearable_text_form_field.dart';
 import 'package:renest/styles/colors.dart';
+
+import 'clearable_text_form_field.dart';
 
 class SearchBar extends GetView<HomeController> {
   SearchBar({required this.onChanged, this.onTap, this.shouldFocus = false});

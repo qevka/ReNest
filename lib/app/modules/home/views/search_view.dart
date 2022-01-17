@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:renest/app/modules/home/components/search_bar.dart';
 import 'package:renest/app/modules/home/controllers/home_controller.dart';
 import 'package:renest/app/modules/home/views/tasks.dart';
-import 'package:renest/app/modules/home/widgets/search_bar.dart';
 import 'package:renest/styles/colors.dart';
 import 'package:renest/styles/fonts.dart';
 
@@ -31,6 +31,7 @@ class SearchView extends GetView<HomeController> {
                     ),
                     TextButton(
                         onPressed: () {
+                          controller.endSearch();
                           Get.back();
                         },
                         child: Text(

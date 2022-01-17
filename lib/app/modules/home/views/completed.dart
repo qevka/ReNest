@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:renest/app/modules/home/components/task_cell.dart';
 import 'package:renest/app/modules/home/controllers/home_controller.dart';
-import 'package:renest/app/modules/home/widgets/task_cell.dart';
 
 class CompletedTaskList extends GetView<HomeController> {
   @override
