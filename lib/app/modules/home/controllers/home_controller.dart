@@ -23,11 +23,11 @@ class HomeController extends GetxController {
   }
 
   endSearch() {
-    tasks.value = tasksHolder.value;
+    tasks.value = tasksHolder.toList();
   }
 
   startSearch() {
-    tasksHolder.value = tasks.value;
+    tasksHolder.value = tasks.toList();
   }
 
   search(String query) {
