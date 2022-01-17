@@ -31,6 +31,9 @@ class SearchBar extends GetView<HomeController> {
                     canvasColor: Colors.transparent,
                     colorScheme: ColorScheme.light(primary: Colors.black38)),
                 child: ClearableTextFormField(
+                  onReset: () {
+                    controller.search("");
+                  },
                   autofocus: shouldFocus,
                   resetIcon: Icon(Icons.cancel),
                   controller: _controller,

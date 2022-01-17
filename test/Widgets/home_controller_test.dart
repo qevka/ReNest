@@ -1,24 +1,28 @@
+import 'package:flutter_test/flutter_test.dart';
+import 'package:get/get.dart';
+import 'package:renest/app/models/task_model.dart';
+import 'package:renest/app/modules/home/controllers/home_controller.dart';
+
 void main() {
-//   test('''
-// Test the state of the reactive variable "name" across all of its lifecycles''', () {
-//     /// You can test the controller without the lifecycle,
-//     /// but it's not recommended unless you're not using
-//     ///  GetX dependency injection
-//     final controller = HomeController();
-//     expect(controller.name.value, 'name1');
-//
-//     /// If you are using it, you can test everything,
-//     /// including the state of the application after each lifecycle.
-//     Get.put(controller); // onInit was called
-//     expect(controller.name.value, 'name2');
-//
-//     /// Test your functions
-//     controller.changeName();
-//     expect(controller.name.value, 'name3');
-//
-//     /// onClose was called
-//     Get.delete<Controller>();
-//
-//     expect(controller.name.value, '');
-//   });
+  /// You can test the controller without the lifecycle,
+  /// but it's not recommended unless you're not using
+  ///  GetX dependency injection
+  TestWidgetsFlutterBinding.ensureInitialized();
+  final testTask = Task(done: false, name: "testTask", priority: Priority.high);
+  final controller = HomeController(testMode: true);
+  Get.put(controller);
+  group('test Functions', () {
+    test("add Task", () {
+      controller.addTask(testTask);
+      expect(1, controller.tasks.where((p0) => p0.name == "testTask").length);
+    });
+    test("Test Searching", () {
+      controller.startSearch();
+      controller.search("re");
+      expect(2, controller.tasks.length);
+      controller.search("");
+      expect(11, controller.tasks.length);
+    });
+  });
+  Get.delete<HomeController>();
 }

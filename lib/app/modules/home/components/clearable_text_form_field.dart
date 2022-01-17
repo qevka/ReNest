@@ -13,6 +13,7 @@ class ClearableTextFormField extends FormField<String> {
   /// For documentation about the various parameters, see the [TextField] class
   /// and [new TextField], the constructor.
   ClearableTextFormField({
+    this.onReset,
     Key? key,
     this.controller,
     String? initialValue,
@@ -109,7 +110,12 @@ class ClearableTextFormField extends FormField<String> {
                   suffixIcon: ((field.value?.length ?? -1) > 0 && state.hasFocus)
                       ? IconButton(
                           icon: resetIcon,
-                          onPressed: () => state.clear(),
+                          onPressed: () {
+                            if (onReset != null) {
+                              onReset();
+                            }
+                            state.clear();
+                          },
                           color: Theme.of(state.context).hintColor,
                         )
                       : null,
@@ -166,6 +172,7 @@ class ClearableTextFormField extends FormField<String> {
   /// initialize its [TextEditingController.text] with [initialValue].
   final TextEditingController? controller;
   final Icon resetIcon;
+  final Function? onReset;
 
   @override
   _ClearableTextFormFieldState createState() => _ClearableTextFormFieldState();
