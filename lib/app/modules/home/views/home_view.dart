@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:renest/app/modules/home/components/search_bar.dart';
+import 'package:renest/app/modules/home/views/add_task_view.dart';
 import 'package:renest/app/modules/home/views/completed.dart';
 import 'package:renest/app/modules/home/views/search_view.dart';
 import 'package:renest/app/modules/home/views/tasks.dart';
-import 'package:renest/app/routes/app_pages.dart';
 import 'package:renest/styles/colors.dart';
 import 'package:renest/styles/fonts.dart';
 
@@ -25,7 +25,7 @@ class HomeView extends GetView<HomeController> {
           actions: [
             IconButton(
                 onPressed: () {
-                  Get.toNamed(Routes.addTask);
+                  Get.to(() => AddTaskView(), transition: Transition.leftToRight);
                 },
                 icon: Icon(Icons.add))
           ],

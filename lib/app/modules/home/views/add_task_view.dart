@@ -5,6 +5,14 @@ import 'package:renest/app/modules/home/controllers/home_controller.dart';
 import 'package:renest/styles/colors.dart';
 import 'package:renest/styles/fonts.dart';
 
+var mockTasks = [
+  "Setup Phone Service",
+  "Find a local doctor",
+  "Order cleaning supplies",
+  "Pay property tax",
+  "Find tree trimmer"
+];
+
 class AddTaskView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
@@ -16,30 +24,26 @@ class AddTaskView extends GetView<HomeController> {
             Get.back();
           },
         ),
-        title: Text('Add Task'),
+        title: Text(
+          'Add Task',
+          style:
+              TextStyle(fontFamily: ReNestFont.avenirLight, fontWeight: FontWeight.normal, color: RenestColor.taskTextColor),
+        ),
         centerTitle: true,
       ),
       body: Container(
-        height: Get.height,
-        width: Get.width,
-        child: Column(
-          children: [
-            AddCell(
-                title: "Go Shopping",
-                onAdd: (task) {
-                  print(task.toJson());
-                })
-          ],
-        ),
-      ),
+          height: Get.height,
+          width: Get.width,
+          child: ListView(
+            children: mockTasks.map((e) => AddCell(title: e)).toList(),
+          )),
     );
   }
 }
 
 class AddCell extends StatefulWidget {
-  AddCell({required this.title, required this.onAdd});
+  AddCell({required this.title});
 
-  final Function(Task) onAdd;
   final String title;
 
   @override
@@ -50,14 +54,15 @@ class _AddCellState extends State<AddCell> with SingleTickerProviderStateMixin {
   bool isPlaying = false;
   late AnimationController _animationController;
 
-  Task genTask(Priority pri) {
-    return Task(name: widget.title, done: false, priority: pri);
+  addTask(Priority pri) {
+    _startAnimation();
+    var task = Task(name: widget.title, done: false, priority: pri);
+    Get.find<HomeController>().addTask(task);
   }
 
   void _startAnimation() async {
     if (isPlaying) {
       _animationController.reverse(from: 10);
-      await Future.delayed(Duration(milliseconds: 450));
       setState(() {
         isPlaying = !isPlaying;
       });
@@ -83,17 +88,22 @@ class _AddCellState extends State<AddCell> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: RenestColor.background,
-      ),
+    return Padding(
+      padding: const EdgeInsets.all(10.0),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Stack(
             alignment: Alignment.center,
             children: [
-              isPlaying ? Container() : Positioned(left: 20, child: Text(widget.title)),
+              isPlaying
+                  ? Container()
+                  : Positioned(
+                      left: 20,
+                      child: Text(
+                        widget.title,
+                        style: TextStyle(fontFamily: ReNestFont.avenirBook, color: RenestColor.taskTextColor, fontSize: 22),
+                      )),
               SlideTransition(
                 position: _offsetAnimation,
                 child: Row(
@@ -101,17 +111,17 @@ class _AddCellState extends State<AddCell> with SingleTickerProviderStateMixin {
                     PriorityButton(
                         priority: Priority.high,
                         onPressed: (pri) {
-                          widget.onAdd(genTask(pri));
+                          addTask(pri);
                         }),
                     PriorityButton(
                         priority: Priority.normal,
                         onPressed: (pri) {
-                          widget.onAdd(genTask(pri));
+                          addTask(pri);
                         }),
                     PriorityButton(
                         priority: Priority.low,
                         onPressed: (pri) {
-                          widget.onAdd(genTask(pri));
+                          addTask(pri);
                         }),
                   ],
                 ),
@@ -120,7 +130,7 @@ class _AddCellState extends State<AddCell> with SingleTickerProviderStateMixin {
           ),
           GestureDetector(
               child: AnimatedSwitcher(
-                  duration: const Duration(milliseconds: 350),
+                  duration: const Duration(milliseconds: 250),
                   transitionBuilder: (child, anim) => RotationTransition(
                         turns: child.key == ValueKey('icon1')
                             ? Tween<double>(begin: 1, end: 0.75).animate(anim)
@@ -128,10 +138,17 @@ class _AddCellState extends State<AddCell> with SingleTickerProviderStateMixin {
                         child: ScaleTransition(scale: anim, child: child),
                       ),
                   child: isPlaying
-                      ? Icon(Icons.close, key: const ValueKey('icon1'))
+                      ? Icon(
+                          Icons.close,
+                          key: const ValueKey('icon1'),
+                          color: RenestColor.textFieldHintText,
+                          size: 40,
+                        )
                       : Icon(
-                          Icons.add,
+                          Icons.add_sharp,
                           key: const ValueKey('icon2'),
+                          color: RenestColor.taskTextColor,
+                          size: 40,
                         )),
               onTap: () {
                 _startAnimation();
@@ -157,7 +174,7 @@ class PriorityButton extends StatelessWidget {
           onPressed(priority);
         },
         child: Container(
-          width: 80,
+          width: Get.width / 3 - 40,
           height: 60,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
@@ -165,11 +182,14 @@ class PriorityButton extends StatelessWidget {
           ),
           child: Align(
             alignment: Alignment.center,
-            child: Text(
-              priority.stringValue,
-              style: TextStyle(fontFamily: ReNestFont.avenirBook, color: Colors.white),
-              maxLines: 4,
-              textAlign: TextAlign.center,
+            child: Container(
+              width: 80,
+              child: Text(
+                priority.stringValue,
+                style: TextStyle(fontFamily: ReNestFont.avenirBook, color: Colors.white),
+                maxLines: 4,
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
         ),

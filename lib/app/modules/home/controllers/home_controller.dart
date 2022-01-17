@@ -22,6 +22,11 @@ class HomeController extends GetxController {
     complete.refresh();
   }
 
+  addTask(Task task) {
+    tasks.add(task);
+    tasks.refresh();
+  }
+
   endSearch() {
     tasks.value = tasksHolder.toList();
   }
