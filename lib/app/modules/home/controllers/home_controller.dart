@@ -8,7 +8,7 @@ class HomeController extends GetxController {
   HomeController({this.testMode = false});
 
   final bool testMode;
-
+  bool searching = false;
   RxList<Task> tasks = RxList.empty();
   RxList<Task> tasksHolder = RxList.empty();
   RxList<Task> get complete {
@@ -27,21 +27,23 @@ class HomeController extends GetxController {
   }
 
   endSearch() {
+    searching = false;
     tasks.value = tasksHolder.toList();
   }
 
   startSearch() {
+    searching = true;
     tasksHolder.value = tasks.toList();
   }
 
+  /// Must call start and end search and the beginning and end of each earch
   search(String query) {
+    assert(searching, true);
     tasks.value = tasksHolder.where((element) => element.name.toLowerCase().contains(query.toLowerCase())).toList();
   }
 
   _loadTestData() async {
-    print("loading Test data");
     final taskData = await rootBundle.loadString('assets/test_data/tasks.json');
-    print("loading..");
     final jsonData = json.decode(taskData);
     for (var data in jsonData) {
       Task task = Task.fromJson(data);

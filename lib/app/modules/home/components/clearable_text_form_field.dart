@@ -109,6 +109,7 @@ class ClearableTextFormField extends FormField<String> {
                   errorText: field.errorText,
                   suffixIcon: ((field.value?.length ?? -1) > 0 && state.hasFocus)
                       ? IconButton(
+                          key: clearButtonKey,
                           icon: resetIcon,
                           onPressed: () {
                             if (onReset != null) {
@@ -173,6 +174,8 @@ class ClearableTextFormField extends FormField<String> {
   final TextEditingController? controller;
   final Icon resetIcon;
   final Function? onReset;
+
+  static const Key clearButtonKey = Key("clearButton");
 
   @override
   _ClearableTextFormFieldState createState() => _ClearableTextFormFieldState();

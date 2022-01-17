@@ -7,12 +7,13 @@ import 'package:renest/styles/colors.dart';
 import 'clearable_text_form_field.dart';
 
 class SearchBar extends GetView<HomeController> {
-  SearchBar({required this.onChanged, this.onTap, this.shouldFocus = false});
+  SearchBar({required this.onChanged, this.onTap, this.shouldFocus = false, this.searchKey});
 
   final Function()? onTap;
   final Function(String) onChanged;
   final bool shouldFocus;
   final TextEditingController _controller = TextEditingController();
+  final Key? searchKey;
 
   @override
   Widget build(BuildContext context) {
@@ -31,6 +32,7 @@ class SearchBar extends GetView<HomeController> {
                     canvasColor: Colors.transparent,
                     colorScheme: ColorScheme.light(primary: Colors.black38)),
                 child: ClearableTextFormField(
+                  key: searchKey,
                   onReset: () {
                     controller.search("");
                   },

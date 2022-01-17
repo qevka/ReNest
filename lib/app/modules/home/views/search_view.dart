@@ -7,6 +7,7 @@ import 'package:renest/styles/colors.dart';
 import 'package:renest/styles/fonts.dart';
 
 class SearchView extends GetView<HomeController> {
+  static const Key searchKey = Key("searchKey");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,6 +26,7 @@ class SearchView extends GetView<HomeController> {
                       child: Hero(
                           tag: "Search",
                           child: SearchBar(
+                            searchKey: searchKey,
                             shouldFocus: true,
                             onChanged: controller.search,
                           )),
@@ -32,6 +34,7 @@ class SearchView extends GetView<HomeController> {
                     TextButton(
                         onPressed: () {
                           controller.endSearch();
+                          assert(controller.searching == false);
                           Get.back();
                         },
                         child: Text(

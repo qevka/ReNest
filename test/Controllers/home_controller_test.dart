@@ -17,12 +17,23 @@ void main() {
       expect(1, controller.tasks.where((p0) => p0.name == "testTask").length);
     });
     test("Test Searching", () {
+      ///test search for "re"
       controller.startSearch();
       controller.search("re");
-      expect(2, controller.tasks.length);
+      expect(controller.tasks.length, 2);
+
+      /// Test deleting all text
       controller.search("");
-      expect(11, controller.tasks.length);
+      expect(controller.tasks.length, 11);
+
+      /// Test search for caps RE.
+      controller.search("RE");
+      expect(controller.tasks.length, 2);
+
+      /// Test that task list is returned to normal
+      controller.endSearch();
+      expect(controller.tasks.length, 11);
+      Get.delete<HomeController>();
     });
   });
-  Get.delete<HomeController>();
 }

@@ -11,78 +11,86 @@ class TaskCell extends GetView<HomeController> {
 
   final Task task;
 
+  static const Key taskKeyComplete = Key("TaskCell");
+  static const Key taskKeyIncomplete = Key("TaskCellIncomplete");
+
   Widget completeCell() {
-    return Material(
-      child: Container(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Padding(
-              padding: const EdgeInsets.fromLTRB(10, 10, 10, 20),
-              child: Row(
-                children: [
-                  GestureDetector(
-                    child: Icon(
+    return GestureDetector(
+      onTap: () {
+        controller.toggleDone(task);
+      },
+      child: Material(
+        child: Container(
+          color: Colors.transparent,
+          width: Get.width,
+          height: 60,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.fromLTRB(10, 10, 0, 10),
+                child: Row(
+                  children: [
+                    Icon(
                       FontAwesomeIcons.checkCircle,
                       color: Colors.black26,
                     ),
-                    onTap: () {
-                      controller.toggleDone(task);
-                    },
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(
-                    task.name,
-                    style: TextStyle(decoration: TextDecoration.lineThrough, color: Colors.black26),
-                  )
-                ],
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Text(
+                      task.name,
+                      style: TextStyle(decoration: TextDecoration.lineThrough, color: Colors.black26),
+                      key: taskKeyComplete,
+                    )
+                  ],
+                ),
               ),
-            ),
-            Container(
-              color: Colors.black12,
-              height: 1,
-              width: Get.width - 40,
-            )
-          ],
+              Container(
+                color: Colors.black12,
+                height: 1,
+                width: Get.width - 40,
+              )
+            ],
+          ),
         ),
       ),
     );
   }
 
   Widget inCompleteCell() {
-    return Container(
-      height: 50,
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: Colors.white),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          GestureDetector(
-            child: Padding(
+    return GestureDetector(
+      onTap: () {
+        controller.toggleDone(task);
+      },
+      key: taskKeyIncomplete,
+      child: Container(
+        height: 50,
+        decoration: BoxDecoration(borderRadius: BorderRadius.circular(10), color: Colors.white),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Padding(
               padding: const EdgeInsets.only(left: 10),
               child: Icon(
                 FontAwesomeIcons.circle,
                 color: Colors.black54,
               ),
             ),
-            onTap: () {
-              controller.toggleDone(task);
-            },
-          ),
-          SizedBox(
-            width: 10,
-          ),
-          Text(
-            task.name,
-            style: TextStyle(
-                fontFamily: ReNestFont.avenirBook,
-                decoration: task.done ? TextDecoration.lineThrough : TextDecoration.none,
-                color: task.done ? RenestColor.taskTextColorDone : RenestColor.taskTextColor,
-                fontSize: 18,
-                fontWeight: FontWeight.normal),
-          )
-        ],
+            SizedBox(
+              width: 10,
+            ),
+            Text(
+              task.name,
+              style: TextStyle(
+                  fontFamily: ReNestFont.avenirBook,
+                  decoration: task.done ? TextDecoration.lineThrough : TextDecoration.none,
+                  color: task.done ? RenestColor.taskTextColorDone : RenestColor.taskTextColor,
+                  fontSize: 18,
+                  fontWeight: FontWeight.normal),
+            )
+          ],
+        ),
       ),
     );
   }
