@@ -26,12 +26,12 @@ class HomeView extends GetView<HomeController> {
             preferredSize: Size(Get.width, 120),
             child: Container(
               width: Get.width,
-              height: 120,
+              height: 110,
               color: Colors.white,
               child: Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: const EdgeInsets.fromLTRB(10, 10, 10, 20),
                     child: Hero(
                       tag: "Search",
                       child: SearchBar(
@@ -44,7 +44,7 @@ class HomeView extends GetView<HomeController> {
                   ),
                   TabBar(
                     indicatorSize: TabBarIndicatorSize.label,
-                    indicatorPadding: EdgeInsets.all(-16),
+                    indicatorPadding: EdgeInsets.all(-12),
                     indicatorColor: Colors.black,
                     tabs: [Text("Tasks"), Text("Completed")],
                     unselectedLabelColor: RenestColor.textFieldHintText,
