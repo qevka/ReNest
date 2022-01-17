@@ -45,7 +45,11 @@ class AddCell extends StatefulWidget {
   AddCell({required this.title});
 
   final String title;
-
+  // These are used for testing purposes so the test widget can find the buttons to press.
+  static const Key lowPriorityKey = Key("lowPriority");
+  static const Key normalPriorityKey = Key("normalPriority");
+  static const Key highPriorityKey = Key("lowPriority");
+  static const Key addButtonKey = Key("AddButtonKey");
   @override
   State<AddCell> createState() => _AddCellState();
 }
@@ -72,6 +76,12 @@ class _AddCellState extends State<AddCell> with SingleTickerProviderStateMixin {
       });
       _animationController.forward(from: 0);
     }
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    super.dispose();
   }
 
   @override
@@ -109,16 +119,19 @@ class _AddCellState extends State<AddCell> with SingleTickerProviderStateMixin {
                 child: Row(
                   children: [
                     PriorityButton(
+                        priorityKey: AddCell.highPriorityKey,
                         priority: Priority.high,
                         onPressed: (pri) {
                           addTask(pri);
                         }),
                     PriorityButton(
+                        priorityKey: AddCell.normalPriorityKey,
                         priority: Priority.normal,
                         onPressed: (pri) {
                           addTask(pri);
                         }),
                     PriorityButton(
+                        priorityKey: AddCell.lowPriorityKey,
                         priority: Priority.low,
                         onPressed: (pri) {
                           addTask(pri);
@@ -129,6 +142,7 @@ class _AddCellState extends State<AddCell> with SingleTickerProviderStateMixin {
             ],
           ),
           GestureDetector(
+              key: AddCell.addButtonKey,
               child: AnimatedSwitcher(
                   duration: const Duration(milliseconds: 250),
                   transitionBuilder: (child, anim) => RotationTransition(
@@ -160,16 +174,18 @@ class _AddCellState extends State<AddCell> with SingleTickerProviderStateMixin {
 }
 
 class PriorityButton extends StatelessWidget {
-  PriorityButton({required this.priority, required this.onPressed});
+  PriorityButton({required this.priority, required this.onPressed, this.priorityKey});
 
   final Function(Priority) onPressed;
   final Priority priority;
+  final Key? priorityKey;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 10, right: 10),
       child: GestureDetector(
+        key: priorityKey,
         onTap: () {
           onPressed(priority);
         },
