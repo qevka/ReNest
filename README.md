@@ -6,7 +6,7 @@
 > Making moving to a new place easy.
 > 
 > ![ReNest - Relocation App](assets/readme_media/home.png)
-> ![ReNest - Relocation App](assets/priorityPicker.gif)
+> ![ReNest - Relocation App](assets/readme_media/priorityPicker.gif)
 
 # Core Features
 >   * Getx State Management (dependency injection / MVC).
