@@ -4,8 +4,8 @@
 </p>
 
 > Making moving to a new place easy.
->
-<img src="assets/readme_media/home.png" alt="drawing" width="320"/>
+> 
+> ![ReNest - Relocation App](assets/readme_media/home.png =662x320)
 > ![ReNest - Relocation App](assets/readme_media/animation.gif)
 
 # Core Features
