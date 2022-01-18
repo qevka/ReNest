@@ -5,7 +5,7 @@
 
 > Making moving to a new place easy.
 > 
-> ![ReNest - Relocation App](assets/readme_media/home.png =662x320)
+> ![ReNest - Relocation App](assets/readme_media/home.png)
 > ![ReNest - Relocation App](assets/readme_media/animation.gif)
 
 # Core Features
